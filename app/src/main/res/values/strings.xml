@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">DormEasy</string>
+    <string name="title_activity_contacts">Contacts</string>
+    <string name="title_activity_student_login">StudentLogin</string>
+    <array name="hostels">
+        <item>Select A Hostel</item>
+        <item>Swami Vivekanand Boys Hostel</item>
+        <item>Patel Hostel</item>
+        <item>Tagore Hostel</item>
+        <item>Malviya Hostel</item>
+        <item>Tilak Hostel</item>
+        <item>Kamla Nehru Girls Hostel</item>
+    </array>
+
+
+    <array name="student_home_list">
+        <item>Profile</item>
+        <item>Complaints Sent</item>
+        <item>Academic Calender</item>
+        <item>Mess Fees</item>
+    </array>
+
+    <array name="departments">
+        <item>Select The Authority</item>
+        <item>Mess Department</item>
+        <item>Electricity Department</item>
+        <item>Drinking Water Department</item>
+        <item>Sanitation Department</item>
+        <item>Washroom Department</item>
+        <item>WiFi Department</item>
+    </array>
+
+    <string name="title_activity_admin_home">AdminHome</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_home">home</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+</resources>

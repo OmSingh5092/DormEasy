@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/admin_home_cl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminHomeFragment">
+
+    <Button
+        android:id="@+id/admin_home_complaints"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:background="@drawable/round_corners_ripple"
+        android:backgroundTint="#e85423"
+        android:drawableTop="@drawable/icon_menu"
+        android:paddingTop="30dp"
+        android:paddingBottom="30dp"
+        android:text="Complaints"
+        android:textSize="15dp"
+        android:textColor="#ffffff"
+        app:layout_constraintEnd_toEndOf="@+id/admin_home_noticeboard"
+        app:layout_constraintStart_toStartOf="@+id/admin_home_noticeboard"
+        app:layout_constraintTop_toTopOf="@+id/admin_home_acadcal" />
+
+    <Button
+        android:id="@+id/admin_home_notice"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/round_corners_ripple"
+        android:backgroundTint="#d400a2"
+        android:drawableTop="@drawable/icon_edit"
+        android:textColor="#ffffff"
+        android:drawablePadding="10dp"
+        android:padding="20dp"
+        android:text="Notice"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toStartOf="@+id/admin_home_noticeboard"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/admin_home_auth" />
+
+    <Button
+        android:id="@+id/admin_home_acadcal"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/round_corners_ripple"
+        android:backgroundTint="#d49f00"
+        android:drawableTop="@drawable/icon_noticeboard"
+        android:drawablePadding="10dp"
+        android:padding="20dp"
+        android:textColor="#ffffff"
+        android:text="Academic Calender"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="@+id/admin_home_notice"
+        app:layout_constraintStart_toStartOf="@+id/admin_home_notice"
+        app:layout_constraintTop_toBottomOf="@+id/admin_home_notice" />
+
+    <Button
+        android:id="@+id/admin_home_noticeboard"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:background="@drawable/round_corners_ripple"
+        android:backgroundTint="#9c6922"
+        android:drawableTop="@drawable/icon_noticeboard"
+        android:drawablePadding="10dp"
+        android:padding="15dp"
+        android:textColor="#ffffff"
+        android:text="Notice Board"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/admin_home_notice"
+        app:layout_constraintTop_toTopOf="@+id/admin_home_notice" />
+
+
+
+    <TextView
+        android:id="@+id/admin_home_auth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Mess Authority"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="#4c228a"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="395dp"
+        android:layout_height="5dp"
+        android:layout_marginTop="8dp"
+        android:background="#a6a6a6"
+        app:layout_constraintTop_toBottomOf="@+id/admin_home_auth"
+        tools:layout_editor_absoluteX="8dp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/admin_home_mess_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/admin_home_acadcal"
+        tools:layout_editor_absoluteX="0dp">
+
+
+        <ProgressBar
+            android:id="@+id/admin_home_pb_parent"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="56dp"
+            app:layout_constraintBottom_toBottomOf="@+id/admin_home_messpayment"
+            app:layout_constraintStart_toEndOf="@+id/admin_home_messpayment"
+            app:layout_constraintTop_toTopOf="@+id/admin_home_messpayment"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/admin_home_mess_upload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_corners_ripple"
+            android:drawableLeft="@drawable/icon_upload"
+            android:drawablePadding="10dp"
+            android:padding="15dp"
+            android:text="Upload Mess Menu"
+            android:textSize="15dp"
+            app:layout_constraintEnd_toStartOf="@+id/admin_home_mess"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/admin_home_mess" />
+
+        <Button
+            android:id="@+id/admin_home_mess"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/round_corners_ripple"
+            android:drawableLeft="@drawable/icon_mess"
+            android:drawablePadding="10dp"
+            android:padding="15dp"
+            android:text="Menu"
+            android:textSize="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/admin_home_mess_upload"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/admin_home_messpayment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/round_corners_ripple"
+            android:drawableLeft="@drawable/icon_upload"
+            android:drawablePadding="10dp"
+            android:padding="15dp"
+            android:text="Mess Payment Url"
+            android:textSize="15dp"
+            app:layout_constraintEnd_toEndOf="@+id/admin_home_mess_upload"
+            app:layout_constraintStart_toStartOf="@+id/admin_home_mess_upload"
+            app:layout_constraintTop_toBottomOf="@+id/admin_home_mess_upload" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

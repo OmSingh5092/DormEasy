@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "625773193484",
+    "firebase_url": "https://dormeasy-45e2a.firebaseio.com",
+    "project_id": "dormeasy-45e2a",
+    "storage_bucket": "dormeasy-45e2a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:625773193484:android:c45b2021c46fdde4",
+        "android_client_info": {
+          "package_name": "com.example.dormeasy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "625773193484-i91eignsapln3hu762fnogueblebgqae.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.dormeasy",
+            "certificate_hash": "7268adab26487ffb5a5e506e2db0a30edbcb5865"
+          }
+        },
+        {
+          "client_id": "625773193484-t1imnsehi1fr7ql0e9nl93duqo37q2ma.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6qE2eZq7wiZv0aiVm1_UyhEMNVRpQoKM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "625773193484-t1imnsehi1fr7ql0e9nl93duqo37q2ma.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

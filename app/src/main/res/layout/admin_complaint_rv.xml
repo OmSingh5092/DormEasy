@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout3"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/admin_complaint_rv_subject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:padding="10dp"
+        android:text="Subject"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="#db463b"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/admin_complaint_rv_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="24dp"
+        android:inputType="textMultiLine"
+        android:text="TextView"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/admin_complaint_rv_subject" />
+
+    <ImageView
+        android:id="@+id/admin_complaint_rv_done"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/round_corners"
+        app:layout_constraintBottom_toTopOf="@+id/divider5"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:backgroundTint="#a0ad10"
+        app:layout_constraintTop_toBottomOf="@+id/admin_complaint_rv_time"
+        app:srcCompat="@drawable/icon_cross" />
+
+    <TextView
+        android:id="@+id/admin_complaint_rv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:padding="5dp"
+        android:text="Time"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="#a18102"
+        app:layout_constraintEnd_toEndOf="@+id/admin_complaint_rv_text"
+        app:layout_constraintTop_toBottomOf="@+id/admin_complaint_rv_text" />
+
+    <TextView
+        android:id="@+id/admin_complaint_rv_sent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:padding="5dp"
+        android:text="TextView"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="#003cc9"
+        app:layout_constraintBottom_toBottomOf="@+id/admin_complaint_rv_time"
+        app:layout_constraintStart_toStartOf="@+id/admin_complaint_rv_text"
+        app:layout_constraintTop_toTopOf="@+id/admin_complaint_rv_time" />
+
+    <ImageButton
+        android:id="@+id/admin_complaint_rv_call"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/round_corners_ripple"
+        android:backgroundTint="#0e6db0"
+        app:layout_constraintBottom_toBottomOf="@+id/admin_complaint_rv_mail"
+        app:layout_constraintStart_toStartOf="@+id/admin_complaint_rv_sent"
+        app:layout_constraintTop_toTopOf="@+id/admin_complaint_rv_mail"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/icon_call" />
+
+    <ImageButton
+        android:id="@+id/admin_complaint_rv_whatsapp"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="40dp"
+        android:background="@drawable/round_corners_ripple"
+        app:layout_constraintBottom_toBottomOf="@+id/admin_complaint_rv_mail"
+        app:layout_constraintStart_toEndOf="@+id/admin_complaint_rv_mail"
+        app:layout_constraintTop_toTopOf="@+id/admin_complaint_rv_mail"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/icon_whatsapp" />
+
+    <ImageButton
+        android:id="@+id/admin_complaint_rv_mail"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="40dp"
+        android:background="@drawable/round_corners_ripple"
+        android:backgroundTint="#c76a18"
+        app:layout_constraintBottom_toBottomOf="@+id/admin_complaint_rv_done"
+        app:layout_constraintStart_toEndOf="@+id/admin_complaint_rv_call"
+        app:layout_constraintTop_toTopOf="@+id/admin_complaint_rv_done"
+        app:srcCompat="@drawable/icon_email" />
+
+    <View
+        android:id="@+id/divider5"
+        android:layout_width="395dp"
+        android:layout_height="1dp"
+        android:layout_marginBottom="8dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="8dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
