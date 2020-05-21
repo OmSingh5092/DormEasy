@@ -5,12 +5,12 @@ import android.net.Uri;
 import java.io.File;
 
 public class GlobalVar {
-    static String regno;
-    static String phone;
-    static StudentInfo sinfo;
-    static String hostel;
-    static AdminInfo info;
-    static class Student {
-        static File profileimage;
+    public static String regno;
+    public static String phone;
+    public static StudentInfo sinfo;
+    public static String hostel;
+    public static AdminInfo info;
+    public static class Student {
+        public static File profileimage;
     }
 }
