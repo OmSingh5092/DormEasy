@@ -5,7 +5,7 @@
     android:id="@+id/frameLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StudentComplaintSent">
+    tools:context=".fragments.StudentComplaintSent">
 
     <ProgressBar
         android:id="@+id/student_complaint_sent_pb"

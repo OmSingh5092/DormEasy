@@ -1,8 +1,10 @@
-package com.example.dormeasy;
+package com.example.dormeasy.activities.students;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.dormeasy.R;
 
 public class StudentMessage extends AppCompatActivity {
 

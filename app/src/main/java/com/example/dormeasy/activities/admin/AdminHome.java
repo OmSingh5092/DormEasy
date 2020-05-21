@@ -1,4 +1,4 @@
-package com.example.dormeasy;
+package com.example.dormeasy.activities.admin;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -22,6 +22,12 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.dormeasy.activities.login.Main;
+import com.example.dormeasy.fragments.AdminHomeFragment;
+import com.example.dormeasy.utils.AdminInfo;
+import com.example.dormeasy.fragments.AdminMessageFragment;
+import com.example.dormeasy.utils.GlobalVar;
+import com.example.dormeasy.R;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -145,7 +151,7 @@ public class AdminHome extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
-                Intent i = new Intent(AdminHome.this,Main.class);
+                Intent i = new Intent(AdminHome.this, Main.class);
                 startActivity(i);
             }
         });

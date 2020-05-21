@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StudentMessage">
+    tools:context=".activities.students.StudentMessage">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/student_message_toolbar"

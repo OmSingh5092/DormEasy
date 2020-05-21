@@ -1,4 +1,4 @@
-package com.example.dormeasy;
+package com.example.dormeasy.activities.login;
 
 import android.content.Context;
 import android.content.Intent;
@@ -7,10 +7,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.dormeasy.R;
+import com.example.dormeasy.activities.admin.AdminHome;
+import com.example.dormeasy.activities.students.StudentHome;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Main extends AppCompatActivity {
@@ -30,14 +32,14 @@ public class Main extends AppCompatActivity {
 
             if(login ==1){
 
-                Intent i = new Intent(Main.this,StudentHome.class);
+                Intent i = new Intent(Main.this, StudentHome.class);
                 startActivity(i);
                 finish();
 
             }
 
             else{
-                Intent i = new Intent(Main.this,AdminHome.class);
+                Intent i = new Intent(Main.this, AdminHome.class);
                 startActivity(i);
                 finish();
             }
@@ -59,7 +61,7 @@ public class Main extends AppCompatActivity {
                 editor.putInt("login",1);
                 editor.apply();
 
-                Intent i = new Intent(Main.this,StudentLogin.class);
+                Intent i = new Intent(Main.this, StudentLogin.class);
                 startActivity(i);
                 finish();
             }
@@ -81,7 +83,7 @@ public class Main extends AppCompatActivity {
                 editor.putInt("login",0);
                 editor.apply();
 
-                Intent i = new Intent(Main.this,AdminLogin.class);
+                Intent i = new Intent(Main.this, AdminLogin.class);
                 startActivity(i);
                 finish();
 

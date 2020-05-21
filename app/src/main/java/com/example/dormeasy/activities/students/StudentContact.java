@@ -1,4 +1,4 @@
-package com.example.dormeasy;
+package com.example.dormeasy.activities.students;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,9 +17,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
-import android.widget.SearchView;
 import android.widget.TextView;
 
+import com.example.dormeasy.utils.AdminInfo;
+import com.example.dormeasy.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;

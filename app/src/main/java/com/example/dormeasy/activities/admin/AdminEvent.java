@@ -1,14 +1,16 @@
-package com.example.dormeasy;
+package com.example.dormeasy.activities.admin;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class StudentFees extends AppCompatActivity {
+import com.example.dormeasy.R;
+
+public class AdminEvent extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_student_fees);
+        setContentView(R.layout.activity_admin_event);
     }
 }

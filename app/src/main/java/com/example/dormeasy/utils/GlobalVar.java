@@ -1,6 +1,4 @@
-package com.example.dormeasy;
-
-import android.net.Uri;
+package com.example.dormeasy.utils;
 
 import java.io.File;
 
