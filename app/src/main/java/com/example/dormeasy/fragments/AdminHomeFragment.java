@@ -1,9 +1,8 @@
-package com.example.dormeasy;
+package com.example.dormeasy.fragments;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.icu.text.UnicodeSetSpanner;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -23,20 +22,21 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.dormeasy.activities.admin.AdminNotice;
+import com.example.dormeasy.utils.GlobalVar;
+import com.example.dormeasy.activities.notices.NoticeBoard;
+import com.example.dormeasy.R;
+import com.example.dormeasy.activities.admin.AdminComplaint;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.io.File;
-import java.io.IOException;
 
 
 /**
@@ -165,7 +165,7 @@ public class AdminHomeFragment extends Fragment {
         notice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getActivity(),AdminNotice.class);
+                Intent i = new Intent(getActivity(), AdminNotice.class);
                 startActivity(i);
             }
         });
@@ -173,14 +173,14 @@ public class AdminHomeFragment extends Fragment {
         complaint.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getActivity(),AdminComplaint.class);
+                Intent i = new Intent(getActivity(), AdminComplaint.class);
                 startActivity(i);
             }
         });
         noticeboard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i= new Intent(getActivity(),NoticeBoard.class);
+                Intent i= new Intent(getActivity(), NoticeBoard.class);
                 startActivity(i);
             }
         });

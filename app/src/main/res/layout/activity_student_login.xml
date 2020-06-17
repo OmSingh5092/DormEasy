@@ -5,7 +5,7 @@
     android:id="@+id/student_login_cl"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StudentLogin">
+    tools:context=".activities.login.StudentLogin">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar2"

@@ -1,26 +1,27 @@
-package com.example.dormeasy;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
+package com.example.dormeasy.activities.login;
 
 import android.content.Context;
 import android.content.Intent;
+import androidx.constraintlayout.widget.ConstraintLayout;
+
+import com.example.dormeasy.activities.students.StudentHome;
+import com.example.dormeasy.utils.GlobalVar;
+import com.example.dormeasy.R;
+import com.google.android.material.textfield.TextInputEditText;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskExecutors;
-import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -34,15 +35,17 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.concurrent.TimeUnit;
 
-public class AdminLogin extends AppCompatActivity {
+import androidx.annotation.NonNull;
 
-    TextInputEditText number,otp;
+public class StudentLogin extends AppCompatActivity {
+    TextInputEditText en,otp;
     Button otpsubmit;
-    TextView number_display;
+    TextView number;
     ImageButton submit,back;
     ProgressBar pb;
     ConstraintLayout cl,layout;
-    String hostelno,verificatonid,phone;
+    String verificatonid,enrollno;
+
 
     public void signInwithCredentials(final PhoneAuthCredential credential) {
         final FirebaseAuth mAuth = FirebaseAuth.getInstance();
@@ -50,15 +53,16 @@ public class AdminLogin extends AppCompatActivity {
         mAuth.signInWithCredential(credential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
+                SharedPreferences preferences =getSharedPreferences("prefID", Context.MODE_PRIVATE);
 
                 if(task.isSuccessful()){
 
-                    SharedPreferences sharedPreferences = getSharedPreferences("prefID", Context.MODE_PRIVATE);
-                    final SharedPreferences.Editor editor = sharedPreferences.edit();
+                    SharedPreferences.Editor editor = preferences.edit();
+                    editor.putString("regno",enrollno);
+                    editor.apply();
 
-                    editor.putString("phone",phone);
-
-                    Intent i = new Intent(AdminLogin.this,AdminHome.class);
+                    GlobalVar.regno = enrollno;
+                    Intent i = new Intent(StudentLogin.this, StudentHome.class);
                     startActivity(i);
                     finish();
 
@@ -78,20 +82,20 @@ public class AdminLogin extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_admin_login);
-        number = findViewById(R.id.admin_login_number_display);
-        otp = findViewById(R.id.admin_login_otp);
-        otpsubmit = findViewById(R.id.admin_login_next);
-        number_display = findViewById(R.id.admin_login_number_display);
-        submit = findViewById(R.id.admin_login_submit);
-        back = findViewById(R.id.admin_login_back);
-        pb = findViewById(R.id.admin_login_pb);
-        cl = findViewById(R.id.admin_login_cl);
+        setContentView(R.layout.activity_student_login);
+
+        en = findViewById(R.id.student_login_en);
+        otp = findViewById(R.id.student_login_otp);
+        number = findViewById(R.id.student_login_number);
+        submit = findViewById(R.id.student_login_submit);
+        pb = findViewById(R.id.student_login_pb);
+        cl = findViewById(R.id.student_login_cl);
         layout = findViewById(R.id.admin_login_layout);
+        otpsubmit = findViewById(R.id.student_login_next);
+        back = findViewById(R.id.student_login_back);
 
         pb.setVisibility(View.GONE);
         cl.removeView(layout);
-
 
 
         final PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallBack = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
@@ -143,10 +147,7 @@ public class AdminLogin extends AppCompatActivity {
                     PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificatonid,otp_number);
                     signInwithCredentials(credential);
 
-
-
                 }
-
 
 
             }
@@ -156,28 +157,29 @@ public class AdminLogin extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(number.getText().equals("")){
-                    Toast.makeText(getApplicationContext(),"Please Enter The PhoneNumber",Toast.LENGTH_SHORT).show();
+                if(en.getText().equals(null)){
+                    Toast.makeText(getApplicationContext(),"Please Enter The RegistrationNumber",Toast.LENGTH_SHORT).show();
                 }
-
                 else{
 
                     pb.setVisibility(View.VISIBLE);
 
-                    phone = "+91"+number.getText().toString();
+                    enrollno = en.getText().toString();
 
                     DatabaseReference myRef = FirebaseDatabase.getInstance().getReference();
 
-                    myRef.child("admin").child(phone).addListenerForSingleValueEvent(new ValueEventListener() {
+                    myRef.child("students").child(enrollno).addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            String mnum = dataSnapshot.child("phone").getValue(String.class);
+                            number.setText("An OTP Has Been Sent to :"+mnum);
 
-                            if(!dataSnapshot.exists()){
+                            if(mnum == null){
                                 Toast.makeText(getApplicationContext(),"The user is not registered",Toast.LENGTH_SHORT).show();
                                 pb.setVisibility(View.GONE);
                             }
                             else{
-                                PhoneAuthProvider.getInstance().verifyPhoneNumber(phone,60, TimeUnit.SECONDS, TaskExecutors.MAIN_THREAD,mCallBack);
+                                PhoneAuthProvider.getInstance().verifyPhoneNumber(mnum,60, TimeUnit.SECONDS, TaskExecutors.MAIN_THREAD,mCallBack);
                             }
 
 
@@ -199,13 +201,10 @@ public class AdminLogin extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(AdminLogin.this,Main.class);
+                Intent i = new Intent(StudentLogin.this, Main.class);
                 startActivity(i);
                 finish();
             }
         });
-
-
-
     }
 }

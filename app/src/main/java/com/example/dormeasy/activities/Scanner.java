@@ -1,4 +1,4 @@
-package com.example.dormeasy;
+package com.example.dormeasy.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -11,11 +11,9 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import com.google.firebase.auth.FirebaseAuth;
+import com.example.dormeasy.R;
+import com.example.dormeasy.activities.notices.NoticeEvents;
 import com.google.zxing.Result;
-
-import java.util.HashMap;
-import java.util.Map;
 
 import static android.Manifest.permission.CAMERA;
 
@@ -93,7 +91,7 @@ public class Scanner extends AppCompatActivity implements ZXingScannerView.Resul
         String [] parsedcode = code.split("/");
 
         if(parsedcode[0].equals("#DormEasy")){
-            Intent i = new Intent(Scanner.this,NoticeEvents.class);
+            Intent i = new Intent(Scanner.this, NoticeEvents.class);
             i.putExtra("time", parsedcode[1]);
             i.putExtra("hostel",parsedcode[2]);
 

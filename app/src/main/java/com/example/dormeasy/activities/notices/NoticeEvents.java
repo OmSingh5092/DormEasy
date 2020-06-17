@@ -1,10 +1,9 @@
-package com.example.dormeasy;
+package com.example.dormeasy.activities.notices;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -15,6 +14,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.dormeasy.utils.GlobalVar;
+import com.example.dormeasy.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -94,7 +95,7 @@ public class NoticeEvents extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String code = "#DormEasy/"+timestamp+"/"+GlobalVar.hostel;
+                String code = "#DormEasy/"+timestamp+"/"+ GlobalVar.hostel;
                 imageView = new ImageView(NoticeEvents.this);
 
                 QRCodeWriter writer = new QRCodeWriter();

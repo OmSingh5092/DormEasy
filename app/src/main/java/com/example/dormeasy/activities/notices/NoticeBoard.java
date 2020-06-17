@@ -1,4 +1,4 @@
-package com.example.dormeasy;
+package com.example.dormeasy.activities.notices;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,13 +14,14 @@ import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.example.dormeasy.utils.GlobalVar;
+import com.example.dormeasy.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.lang.reflect.Array;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -102,9 +103,9 @@ public class NoticeBoard extends AppCompatActivity {
                 itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent i = new Intent(NoticeBoard.this,NoticeEvents.class);
+                        Intent i = new Intent(NoticeBoard.this, NoticeEvents.class);
                         i.putExtra("time",rv_time.get(getAdapterPosition()));
-                        i.putExtra("hostel",GlobalVar.hostel);
+                        i.putExtra("hostel", GlobalVar.hostel);
                         startActivity(i);
                     }
                 });

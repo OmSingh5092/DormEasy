@@ -1,4 +1,4 @@
-package com.example.dormeasy;
+package com.example.dormeasy.activities.students;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -23,16 +23,12 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.auth.api.signin.internal.Storage;
+import com.example.dormeasy.activities.PhoneChange;
+import com.example.dormeasy.utils.GlobalVar;
+import com.example.dormeasy.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -130,7 +126,7 @@ public class student_profile extends AppCompatActivity {
                         pb.setVisibility(View.GONE);
                         Toast.makeText(getApplicationContext(),"Profile Photo Successfully Uploaded",Toast.LENGTH_SHORT).show();
 
-                        Intent i = new Intent(student_profile.this,StudentHome.class);
+                        Intent i = new Intent(student_profile.this, StudentHome.class);
                         startActivity(i);
 
                     }
@@ -242,7 +238,7 @@ public class student_profile extends AppCompatActivity {
         phone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(student_profile.this,PhoneChange.class);
+                Intent i = new Intent(student_profile.this, PhoneChange.class);
                 startActivity(i);
             }
         });

@@ -5,7 +5,7 @@
     android:id="@+id/admin_home_cl"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AdminHomeFragment">
+    tools:context=".fragments.AdminHomeFragment">
 
     <Button
         android:id="@+id/admin_home_complaints"

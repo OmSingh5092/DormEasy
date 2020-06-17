@@ -1,4 +1,4 @@
-package com.example.dormeasy;
+package com.example.dormeasy.activities.students;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,6 +29,12 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.dormeasy.activities.login.Main;
+import com.example.dormeasy.activities.Scanner;
+import com.example.dormeasy.activities.notices.NoticeBoard;
+import com.example.dormeasy.utils.GlobalVar;
+import com.example.dormeasy.R;
+import com.example.dormeasy.utils.StudentInfo;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -40,15 +46,12 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
-import com.google.zxing.Result;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-
-import static android.Manifest.permission.CAMERA;
 
 public class StudentHome extends AppCompatActivity {
     DrawerLayout drawerLayout;
@@ -121,12 +124,12 @@ public class StudentHome extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if(position == 0){
-                    Intent i = new Intent(StudentHome.this,student_profile.class);
+                    Intent i = new Intent(StudentHome.this, student_profile.class);
                     startActivity(i);
                 }
 
                 else if(position == 1){
-                    Intent i = new Intent(StudentHome.this,StudentComplaints.class);
+                    Intent i = new Intent(StudentHome.this, StudentComplaints.class);
                     i.putExtra("tab",1);
                     startActivity(i);
                 }
@@ -382,7 +385,7 @@ public class StudentHome extends AppCompatActivity {
         noticeboard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(StudentHome.this,NoticeBoard.class);
+                Intent i = new Intent(StudentHome.this, NoticeBoard.class);
                 startActivity(i);
             }
         });
@@ -390,7 +393,7 @@ public class StudentHome extends AppCompatActivity {
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(StudentHome.this,Main.class);
+                Intent i = new Intent(StudentHome.this, Main.class);
                 FirebaseAuth.getInstance().signOut();
                 startActivity(i);
                 finish();

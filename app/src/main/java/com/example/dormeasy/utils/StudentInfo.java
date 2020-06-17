@@ -1,4 +1,4 @@
-package com.example.dormeasy;
+package com.example.dormeasy.utils;
 
 public class StudentInfo {
 

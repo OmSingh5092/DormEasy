@@ -1,4 +1,4 @@
-package com.example.dormeasy;
+package com.example.dormeasy.activities.admin;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,9 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.example.dormeasy.activities.notices.NoticeBoard;
+import com.example.dormeasy.utils.GlobalVar;
+import com.example.dormeasy.R;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -53,7 +56,7 @@ public class AdminNotice extends AppCompatActivity {
                     text.setText("");
                     subject.setText("");
 
-                    Intent i = new Intent(AdminNotice.this,NoticeBoard.class);
+                    Intent i = new Intent(AdminNotice.this, NoticeBoard.class);
                     startActivity(i);
 
                     Toast.makeText(getApplicationContext(),"Notice Uploaded Successfully",Toast.LENGTH_SHORT).show();

@@ -16,25 +16,25 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:hardwareAccelerated="false">
-        <activity android:name=".Scanner"></activity>
-        <activity android:name=".NoticeEvents" />
-        <activity android:name=".StudentMessage" />
-        <activity android:name=".StudentContact" />
-        <activity android:name=".PhoneChange" />
-        <activity android:name=".NoticeBoard" />
-        <activity android:name=".AdminComplaint" />
-        <activity android:name=".AdminEvent" />
-        <activity android:name=".AdminNotice" />
-        <activity android:name=".StudentFees" />
+        <activity android:name=".activities.Scanner"></activity>
+        <activity android:name=".activities.notices.NoticeEvents" />
+        <activity android:name=".activities.students.StudentMessage" />
+        <activity android:name=".activities.students.StudentContact" />
+        <activity android:name=".activities.PhoneChange" />
+        <activity android:name=".activities.notices.NoticeBoard" />
+        <activity android:name=".activities.admin.AdminComplaint" />
+        <activity android:name=".activities.admin.AdminEvent" />
+        <activity android:name=".activities.admin.AdminNotice" />
+        <activity android:name=".activities.students.StudentFees" />
         <activity
-            android:name=".StudentComplaints"
+            android:name=".activities.students.StudentComplaints"
             android:windowSoftInputMode="adjustPan" />
-        <activity android:name=".student_profile" />
-        <activity android:name=".AdminHome" />
-        <activity android:name=".AdminLogin" />
-        <activity android:name=".StudentHome" />
-        <activity android:name=".StudentLogin" />
-        <activity android:name=".Main">
+        <activity android:name=".activities.students.student_profile" />
+        <activity android:name=".activities.admin.AdminHome" />
+        <activity android:name=".activities.login.AdminLogin" />
+        <activity android:name=".activities.students.StudentHome" />
+        <activity android:name=".activities.login.StudentLogin" />
+        <activity android:name=".activities.login.Main">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
